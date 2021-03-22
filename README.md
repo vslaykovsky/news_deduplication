@@ -15,13 +15,13 @@ See `gen_news_duplicates_data` in `train.ipynb` for more details.
 
 ## Using the model
 
-Load the model
+Load the model from HuggingFace https://huggingface.co/vslaykovsky/roberta-news-duplicates
 ```
 from simpletransformers.classification import ClassificationModel, ClassificationArgs
 import torch 
 model_news_dup = ClassificationModel(
     'roberta',
-    'model/roberta_news_duplicates',
+    'vslaykovsky/roberta-news-duplicates',
     use_cuda=torch.cuda.is_available(), 
     args=ClassificationArgs(
         fp16=True, 
@@ -31,7 +31,7 @@ model_news_dup = ClassificationModel(
     )    
 ) 
 ```
-Run prediction.
+Running prediction.
 
 Negative example:
 ```
